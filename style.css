@@ -1,0 +1,25 @@
+#main {
+    position: absolute;
+}
+
+#main > div {
+    padding-left: 35vw;
+    padding-top: 10vw;
+    position: relative;
+    align-content: center;
+}
+
+
+#steen:hover {
+    scale: 120%;
+
+}#papier:hover {
+    scale: 120%;
+}#schaar:hover {
+    scale: 120%;
+}
+
+img {
+    padding: 4px;
+}
+
