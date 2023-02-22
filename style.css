@@ -3,7 +3,7 @@
 }
 
 #main > div {
-    padding-left: 35vw;
+    padding-left: 32vw;
     padding-top: 10vw;
     position: relative;
     align-content: center;
@@ -13,10 +13,23 @@
 #steen:hover {
     scale: 120%;
 
-}#papier:hover {
+}
+
+#papier:hover {
     scale: 120%;
-}#schaar:hover {
+}
+
+#schaar:hover {
     scale: 120%;
+}
+
+#output > div {
+}
+
+div > .output-img {
+    width: 400px;
+    float: left;
+
 }
 
 img {

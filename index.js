@@ -3,17 +3,36 @@ function input(input) {
     document.getElementById("papier").style.display = "none";
     document.getElementById("schaar").style.display = "none";
 
-    input.style.display = "block"
-    let select = Math.round(Math.random() * 3)
+
+    let select = Math.round(Math.random() * 2)
+    DisplayOutput(input)
+    DisplayOutput(select)
+    document.getElementsByClassName("output-img")
+
+
+
+}
+
+function DisplayOutput(select) {
+    let src = document.getElementById("output");
+    let output = src.appendChild(document.createElement("div"))
+    output.className = "output-img"
+
+    let img = document.createElement("img")
+
+
     switch (select) {
+        case 0:
+            img.src = "./img/schaar.png";
+            output.appendChild(img)
+            return;
         case 1:
-            document.getElementById("steen").style.display = "block";
-            return
+            img.src = "./img/steen.png";
+            output.appendChild(img)
+            return;
         case 2:
-            document.getElementById("steen").style.display = "block";
-            return
-        case 3:
-            document.getElementById("steen").style.display = "block"
+            img.src = "./img/papier.png";
+            output.appendChild(img)
             return;
 
     }
