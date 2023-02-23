@@ -2,11 +2,12 @@
     position: absolute;
 }
 
-#main > div {
+#main > #images {
     padding-left: 32vw;
     padding-top: 10vw;
     position: relative;
     align-content: center;
+
 }
 
 
@@ -24,15 +25,18 @@
 }
 
 #output > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 200px;
 }
 
 div > .output-img {
-    width: 400px;
-    float: left;
 
 }
 
 img {
     padding: 4px;
+    max-width: 100%;
 }
 
