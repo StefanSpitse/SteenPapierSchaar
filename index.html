@@ -13,10 +13,18 @@
             <img src="./img/steen.png" id="steen" onclick="input(1)" alt="Steen">
             <img src="./img/papier.png" id="papier" onclick="input(2)" alt="Papier">
         </div>
-        <div id="Display_text">
-
-        </div>
+        <h1 id="Display_text"></h1>
         <div id="output"></div>
-    </div>
+        <div id="Score">
+            <i class="fa-regular fa-circle" id="round1"></i>
+            <i class="fa-regular fa-circle" id="round2"></i>
+            <i class="fa-regular fa-circle" id="round3"></i>
+        </div>
+        <div onclick="nextRound()">
+            <i class="fa-solid fa-arrow-right fa-3x fa-bounce" style="display: none" id="Button"></i>
+        </div>
+
 </body>
+<script src="https://kit.fontawesome.com/2808284750.js" crossorigin="anonymous"></script>
 </html>
+

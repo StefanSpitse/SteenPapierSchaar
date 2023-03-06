@@ -2,12 +2,16 @@
     position: absolute;
 }
 
-#main > #images {
-    padding-left: 32vw;
+#images {
+    display: flex;
+    justify-content: center;
+    padding-left: 34vw;
     padding-top: 10vw;
-    position: relative;
-    align-content: center;
 
+}
+
+#images > img {
+    padding: 10%;
 }
 
 
@@ -24,19 +28,42 @@
     scale: 120%;
 }
 
-#output > div {
+#output {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    height: 200px;
+    justify-content: center;
+    padding-left: 40vw;
 }
 
-div > .output-img {
+#player {
+    padding-right: 120%;
 
 }
 
-img {
-    padding: 4px;
-    max-width: 100%;
+#Display_text {
+    padding-left: 45vw;
+}
+
+#Score {
+    position: static;
+    display: flex;
+    justify-content: center;
+    padding-left: 17vw;
+
+    scale: 200%;
+}
+
+#Score > i {
+    padding: 10px;
+}
+
+#Button {
+    padding-bottom: 10px;
+    padding-left: 49vw;
+    --fa-bounce-start-scale-x: 1;
+    --fa-bounce-start-scale-y: 1;
+    --fa-bounce-jump-scale-x: 1;
+    --fa-bounce-jump-scale-y: 1;
+    --fa-bounce-land-scale-x: 1;
+    --fa-bounce-land-scale-y: 1;
 }
 

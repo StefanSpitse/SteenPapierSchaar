@@ -21,6 +21,7 @@ function input(input) {
 
 
     Winnaar(input, bot_input)
+    document.getElementById("Score").style.display = "none";
 
 
 }
@@ -55,6 +56,91 @@ function DisplayOutput(select, id) {
 
 function Winnaar(player_input, bot_input) {
     if (player_input === bot_input) {
-        document.getElementById("Display_text").innerText = "Gelijk spel";
+        document.getElementById("Display_text").innerText = "Gelijk spel!";
+        document.getElementById("Button").style.display = "block";
+        return
     }
+    switch (player_input) {
+        case 0:
+            if (bot_input === 1) {
+                Lose()
+                return
+            } else {
+                Win()
+                return
+            }
+        case 1:
+            if (bot_input === 2) {
+                Lose()
+                return
+            } else {
+                Win()
+                return
+            }
+
+        case 2:
+            if (bot_input === 0) {
+                Lose()
+                return
+            } else {
+                Win()
+                return
+            }
+
+    }
+
+}
+
+let score = [0, 0] // index 0 is player | index 1 is bot
+function Lose() {
+    document.getElementById("Display_text").innerText = "Veloren!";
+    score[1]++
+    if (score[1] === 2) {
+        Result("Verloren :(((((")
+        return;
+    }
+
+    let round = score[0] + score[1]
+    document.getElementById("round" + round).className = "fa-regular fa-circle-xmark";
+    document.getElementById("Button").style.display = "block";
+
+}
+
+function Win() {
+    document.getElementById("Display_text").innerText = "Gewonnen!";
+    score[0]++
+
+    if (score[0] === 2) {
+        Result("Gewonnen!!")
+        return;
+    }
+
+    let round = score[0] + score[1]
+
+    document.getElementById("round" + round).className = "fa-regular fa-circle-check";
+    document.getElementById("Button").style.display = "block";
+
+}
+
+function nextRound() {
+    document.getElementById("steen").style.display = "block";
+    document.getElementById("papier").style.display = "block";
+    document.getElementById("schaar").style.display = "block";
+    document.getElementById("Display_text").innerHTML = ""
+    document.getElementById("Button").style.display = "none"
+    document.getElementById("Score").style.display = "flex"
+    let src = document.getElementById("output");
+    src.removeChild(src.childNodes[0])
+    src.removeChild(src.childNodes[0])
+
+
+}
+
+function Result(message) {
+    nextRound()
+    document.getElementById("steen").style.display = "none";
+    document.getElementById("papier").style.display = "none";
+    document.getElementById("schaar").style.display = "none";
+    document.getElementById("Display_text").innerHTML = message
+
 }
