@@ -86,7 +86,6 @@ function Winnaar(player_input, bot_input) {
                 Win()
                 return
             }
-
     }
 
 }
@@ -100,7 +99,7 @@ function Lose() {
         return;
     }
 
-    let round = score[0] + score[1]
+    let round = score[0] + score[1];
     document.getElementById("round" + round).className = "fa-regular fa-circle-xmark";
     document.getElementById("Button").style.display = "block";
 
@@ -123,6 +122,22 @@ function Win() {
 }
 
 function nextRound() {
+    if (score[0] === 2 || score[1] === 2)
+    {
+        document.getElementById("steen").style.display = "block";
+        document.getElementById("papier").style.display = "block";
+        document.getElementById("schaar").style.display = "block";
+
+        score[0] = 0;
+        score[1] = 0;
+        document.getElementById("Button").className = "fa-solid fa-arrow-right fa-3x fa-bounce";
+        for (let i = 1; i != 3; i++) {
+            document.getElementById("round" + i).className = "fa-regular fa-circle"
+        }
+
+
+    }
+
     document.getElementById("steen").style.display = "block";
     document.getElementById("papier").style.display = "block";
     document.getElementById("schaar").style.display = "block";
@@ -133,14 +148,12 @@ function nextRound() {
     src.removeChild(src.childNodes[0])
     src.removeChild(src.childNodes[0])
 
-
 }
 
 function Result(message) {
-    nextRound()
-    document.getElementById("steen").style.display = "none";
-    document.getElementById("papier").style.display = "none";
-    document.getElementById("schaar").style.display = "none";
-    document.getElementById("Display_text").innerHTML = message
-
+    document.getElementById("Display_text").innerHTML = message;
+    document.getElementById("Score").style.display = "flex";
+    document.getElementById("Button").className = "fa-sharp fa-solid fa-arrow-rotate-right fa-3x"
+    document.getElementById("Button").style.display = "block"
 }
+

@@ -44,7 +44,6 @@
 }
 
 #Score {
-    position: static;
     display: flex;
     justify-content: center;
     padding-left: 17vw;
@@ -67,3 +66,16 @@
     --fa-bounce-land-scale-y: 1;
 }
 
+#wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#start {
+    background-color: lightgreen;
+    border: black solid 1px;
+    margin: 100px;
+    width: 300px;
+    height: 100px;
+    text-align: center;
+}
