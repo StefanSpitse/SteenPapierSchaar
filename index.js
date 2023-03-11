@@ -91,9 +91,10 @@ function nextRound() {
 
     }
 
-    document.getElementById("steen").style.display = "block";
-    document.getElementById("papier").style.display = "block";
-    document.getElementById("schaar").style.display = "block";
+    for (let x = 0; x !== option_list.length; x++) {
+        option_list[x].style.display = "block";
+        console.log(x)
+    }
     document.getElementById("Display_text").innerHTML = ""
     document.getElementById("Button").style.display = "none"
     document.getElementById("Score").style.display = "flex"
