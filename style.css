@@ -1,6 +1,6 @@
 h1 {
+    text-align: center;
     font-family: "Roboto Light", sans-serif;
-
 }
 
 #main {
@@ -10,49 +10,44 @@ h1 {
 #images {
     display: flex;
     justify-content: center;
-    padding-left: 34vw;
     padding-top: 10vw;
+    height: auto;
+    width: 100vw;
 
 }
 
 #images > img {
-    padding: 10%;
+    padding: 1%;
 }
 
-
-#steen:hover {
-    scale: 120%;
-
+#Display_text {
+    height: auto;
+    width: 100vw;
 }
 
-#papier:hover {
-    scale: 120%;
-}
-
-#schaar:hover {
+#papier:hover, #schaar:hover, #steen:hover, #spock:hover, #lizard:hover {
     scale: 120%;
 }
+
 
 #output {
     display: flex;
     justify-content: center;
-    padding-left: 40vw;
+    height: auto;
+    width: 100vw;
 }
 
-#player {
-    padding-right: 120%;
-
+#player, #bot {
+    padding: 4%;
 }
 
-#Display_text {
-    text-align: center;
-}
 
 #Score {
     display: flex;
     justify-content: center;
-    padding-left: 17vw;
-
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
     scale: 200%;
 }
 
@@ -60,9 +55,12 @@ h1 {
     padding: 10px;
 }
 
+#Button_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 #Button {
-    padding-bottom: 10px;
-    padding-left: 49vw;
     --fa-bounce-start-scale-x: 1;
     --fa-bounce-start-scale-y: 1;
     --fa-bounce-jump-scale-x: 1;
@@ -70,6 +68,7 @@ h1 {
     --fa-bounce-land-scale-x: 1;
     --fa-bounce-land-scale-y: 1;
 }
+
 
 #wrapper {
     display: flex;

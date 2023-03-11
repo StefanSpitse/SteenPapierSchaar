@@ -1,7 +1,15 @@
 window.onload = config;
 let option_list;
+let mode;
 function config() {
     option_list = document.querySelectorAll(".options");
+    if (option_list.length > 2) {
+        mode = "LS"
+    }
+    else {
+        mode = "normal"
+    }
+
 }
 
 function input(input) {
@@ -10,9 +18,8 @@ function input(input) {
         option_list[x].style.display = "none";
     }
 
-
-
-    let bot_input = Math.round(Math.random() * 2)
+    let bot_input = Math.floor(Math.random() * option_list.length)
+    console.log(bot_input)
     DisplayOutput(input, "player")
     DisplayOutput(bot_input, "bot")
 
@@ -31,14 +38,10 @@ function input(input) {
     if (input === bot_input) {
         document.getElementById("Display_text").innerText = "Gelijk spel!";
         document.getElementById("Button").style.display = "block";
-    }
-    else {
-        return_winner("normal", input, bot_input)
-
+    } else {
+        return_winner(mode, input, bot_input)
     }
     document.getElementById("Score").style.display = "none";
-
-
 
 }
 
@@ -49,7 +52,7 @@ function DisplayOutput(select, id) {
 
     let img = document.createElement("img")
 
-
+    document.getElementById("images").style.paddingTop = "0vw";
     switch (select) {
         case 0:
             img.src = "./img/schaar.png";
@@ -66,8 +69,19 @@ function DisplayOutput(select, id) {
             output.appendChild(img)
             output.id = id
             return;
+        case 3:
+            img.src = "./img/lizard.png";
+            output.appendChild(img)
+            output.id = id
+            return;
+        case 4:
+            img.src = "./img/spock.png";
+            output.appendChild(img)
+            output.id = id
+            return;
 
     }
+
 }
 
 
@@ -75,8 +89,9 @@ let score = [0, 0] // index 0 is player | index 1 is bot
 
 
 function nextRound() {
-    if (score[0] === 2 || score[1] === 2)
+    if (score[0] === 2 || score[1] === 2) // checks if the game is over
     {
+        // if it is over reset all the pictures
         for (let x = 0; x !== option_list.length; x++) {
             option_list[x].style.display = "block";
         }
@@ -93,7 +108,6 @@ function nextRound() {
 
     for (let x = 0; x !== option_list.length; x++) {
         option_list[x].style.display = "block";
-        console.log(x)
     }
     document.getElementById("Display_text").innerHTML = ""
     document.getElementById("Button").style.display = "none"

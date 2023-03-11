@@ -1,5 +1,15 @@
+/*
+Every option in rps and rpsls have numbers corresponding to what they represent
+they are: 0 = scissors. loses to: spock, rock. wins to: lizard, paper.
+          1 = rock. loses to: paper, spock. wins to: lizard, scissors.
+          2 = paper. loses to: lizard, scissors. wins to: rock, spock.
+          3 = lizard. loses to: rock, scissors. wins to: spock, paper.
+          4 = spock. loses to: paper, lizard. wins to: rock, scissors.
+
+ */
 function return_winner(mode, player_input, bot_input) {
     if (mode === "normal") {
+
         switch (player_input) {
             case 0:
                 if (bot_input === 1) {
@@ -25,6 +35,56 @@ function return_winner(mode, player_input, bot_input) {
                 } else {
                     Win()
                     return
+                }
+        }
+
+
+    } else {
+        switch (player_input) {
+            case 0:
+                if (bot_input === 1 || bot_input === 4) {
+                    Lose();
+                    return;
+                }
+                else {
+                    Win();
+                    return;
+                }
+            case 1:
+                if (bot_input === 2 || bot_input === 4) {
+                    Lose();
+                    return;
+                }
+                else {
+                    Win()
+                    return;
+                }
+            case 2:
+                if (bot_input === 0 || bot_input === 3) {
+                    Lose();
+                    return;
+                }
+                else {
+                    Win()
+                    return;
+                }
+            case 3:
+                if (bot_input === 0 || bot_input === 1) {
+                    Lose();
+                    return;
+                }
+                else {
+                    Win()
+                    return;
+                }
+            case 4:
+                if (bot_input === 2 || bot_input === 3) {
+                    Lose();
+                    return;
+                }
+                else {
+                    Win()
+                    return;
                 }
         }
 
