@@ -73,9 +73,19 @@ h1 {
 #wrapper {
     display: flex;
     justify-content: center;
-
+    width: 100vw;
 
 }
+
+#InfoPicture {
+    display: none;
+    scale: 80%;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+}
+
+
 
 .mode_button {
 
@@ -96,5 +106,4 @@ h1 {
 .mode_button:hover {
     scale: 110%;
  }
-
 

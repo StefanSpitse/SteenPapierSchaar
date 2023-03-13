@@ -1,7 +1,11 @@
 window.onload = config;
 let option_list;
 let mode;
+let $infoPictureEvent;
 function config() {
+    let $infoPictureEvent = document.querySelector("#rpsls");
+    $infoPictureEvent.addEventListener("mouseover", displayInfo)
+    $infoPictureEvent.addEventListener("mouseout", hideInfo)
     option_list = document.querySelectorAll(".options");
     if (option_list.length > 2) {
         mode = "LS"
@@ -125,3 +129,10 @@ function Result(message) {
     document.getElementById("Button").style.display = "block"
 }
 
+function displayInfo() {
+    document.getElementById("InfoPicture").style.display = "flex"
+}
+
+function hideInfo() {
+    document.getElementById("InfoPicture").style.display = "none"
+}
