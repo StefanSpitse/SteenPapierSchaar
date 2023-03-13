@@ -95,7 +95,7 @@ function Lose() {
     document.getElementById("Display_text").innerText = "Veloren!";
     score[1]++
     if (score[1] === 2) {
-        Result("Verloren :(((((")
+        Result("Verloren")
         return;
     }
 
